@@ -6,44 +6,76 @@
 
 /**
  * функция возвращает сумму параметров
- * @param {number} a
- * @param {number} b
+ * @param {number} arg1
+ * @param {number} arg2
  * @returns {number}
  */
-function getSum(a,b) {
-    return (a+b);
+function getSum(arg1 ,arg2) {
+    return (arg1+arg2);
 }
 
 /**
  * функция возвращает разность параметров
- * @param {number} a
- * @param {number} b
+ * @param {number} arg1
+ * @param {number} arg2
  * @returns {number}
  */
-function getDiff(a,b) {
-    return (a-b);
+function getDiff(arg1,arg2) {
+    return (arg1-arg2);
 }
 
 /**
  * функция возвращает произведение параметров
- * @param {number} a
- * @param {number} b
+ * @param {number} arg1
+ * @param {number} arg2
  * @returns {number}
  */
-function getMulti(a,b) {
-    return (a*b);
+function getMulti(arg1,arg2) {
+    return (arg1*arg2);
 }
 
 /**
  * функция возвращает частное от делелния параметров
- * @param {number} a
- * @param {number} b
+ * @param {number} arg1
+ * @param {number} arg2
  * @returns {number}
  */
-function getQuot(a,b) {
-    if (b!=0) {
-        return (a/b);
+function getQuot(arg1,arg2) {
+    if (arg2!=0) {
+        return (arg1/arg2);
     } else{
         return 0;
     }
 }
+
+// задание №5 Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+// где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+// переданного значения операции (использовать switch) выполнить одну из арифметических
+// операций (использовать функции из задания 4) и вернуть полученное значение.
+
+/**
+ * функция возвращает результат функции, в зависимости от введенного типа операций
+ * @param {number} arg1
+ * @param {number} arg2
+ * @param {string}operation
+ * @returns {number}
+ */
+function mathOperation(arg1, arg2, operation){
+    let result;
+    switch (operation) {
+        case "+":
+            result = getSum(arg1 ,arg2);
+            break;
+        case "-":
+            result = getDiff(arg1,arg2);
+            break;
+        case "*":
+            result = getMulti(arg1,arg2);
+            break;
+        case "/":
+            result = getQuot(arg1,arg2);
+            break;
+    }
+    return result;
+}
+console.log(mathOperation(5,6, "*"));
