@@ -44,18 +44,18 @@ function getNumberDeclination(arg1){
 /**
  * функция проверяет переданное в нее число, и если оно меньше 20, то возвращает его без изменения,
  * если число больше 20, то возвращает последнюю цифру этого числа
- * @param {number} arg1
+ * @param {number} num
  * @returns {number} lastNumber
  */
-function getLastNumber(arg1){
+function getLastNumber(num){
     let lastNumber;
 
-    if (arg1<=19){
-        lastNumber=arg1;
+    if (num<=19){
+        lastNumber=num;
         return lastNumber;
     } else {
-        arg1 = String(arg1);
-        lastNumber = arg1.charAt(arg1.length-1);
+        num = String(num);
+        lastNumber = num.charAt(num.length-1);
         lastNumber = parseInt(lastNumber);
         return lastNumber;
     }
