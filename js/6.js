@@ -16,9 +16,17 @@
 function getNumberDeclination(arg1){
     let resultString;
     let lastNumber=getLastNumber(arg1); // запишем в переменную окончание суммы, которую ввел пользователь
+    
+    if (lastNumber >=5 && lastNumber <= 19){
+        resultString = "рублей";
+    } else if (lastNumber==0){
+        resultString = "рублей";
+    } else if (lastNumber >=2 && lastNumber <=4){
+        resultString = "рубля";
+    } else resultString="рубль";
 
-    ///// не получилось сделать через switch, почему то он не видит условия. Пришлось делать через if
-    // switch (lastNumber) {
+    // Альтернативный вариант через switch
+    // switch (true) {
     //     case (lastNumber >=5 && lastNumber <= 19) :
     //         resultString = "рублей";
     //         break;
@@ -30,14 +38,6 @@ function getNumberDeclination(arg1){
     //         break;
     //     default: resultString="рубль"
     // }
-
-    if (lastNumber >=5 && lastNumber <= 19){
-        resultString = "рублей";
-    } else if (lastNumber==0){
-        resultString = "рублей";
-    } else if (lastNumber >=2 && lastNumber <=4){
-        resultString = "рубля";
-    } else resultString="рубль";
     return resultString;
 }
 
