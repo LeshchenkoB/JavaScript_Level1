@@ -14,12 +14,12 @@
  * @returns {string} resultString
  */
 function getNumberDeclination(arg1){
-    let resultString;
+    let resultString = '';
     let lastNumber=getLastNumber(arg1); // запишем в переменную окончание суммы, которую ввел пользователь
-    
+
     if (lastNumber >=5 && lastNumber <= 19){
         resultString = "рублей";
-    } else if (lastNumber==0){
+    } else if (lastNumber == 0){
         resultString = "рублей";
     } else if (lastNumber >=2 && lastNumber <=4){
         resultString = "рубля";
@@ -48,7 +48,7 @@ function getNumberDeclination(arg1){
  * @returns {number} lastNumber
  */
 function getLastNumber(num){
-    let lastNumber;
+    let lastNumber = null;
 
     if (num<=19){
         lastNumber=num;
@@ -60,10 +60,10 @@ function getLastNumber(num){
         return lastNumber;
     }
 }
-let answerHowMuchMoney;
 
-answerHowMuchMoney = prompt("Сколько денег вы хотите положить на счет?");
-if (answerHowMuchMoney == +answerHowMuchMoney && answerHowMuchMoney.trim() ) {
+let answerHowMuchMoney = prompt("Сколько денег вы хотите положить на счет?");
+if (answerHowMuchMoney == +answerHowMuchMoney) { // если то, что ввели при явном преобразовании
+    // в число останется равным тому, что ввели
     alert(`Ваша сумма в ${answerHowMuchMoney} ${getNumberDeclination(answerHowMuchMoney)} успешно зачислена!`);
 }
 else  if(answerHowMuchMoney !== null) {
