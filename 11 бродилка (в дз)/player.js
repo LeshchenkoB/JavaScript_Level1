@@ -12,7 +12,9 @@ const player = {
      * @param {{x: int, y: int}} nextPoint Следующая точка пользователя.
      */
     move(nextPoint) {
-        this.x = nextPoint.x;
-        this.y = nextPoint.y;
+        if (!(nextPoint.x < 0 || nextPoint.x >= config.colsCount ||  nextPoint.y < 0 || nextPoint.y >= config.rowsCount)){ // если новые координаты на выходят за границы поля
+            this.x = nextPoint.x;
+            this.y = nextPoint.y;
+        }
     },
 };
