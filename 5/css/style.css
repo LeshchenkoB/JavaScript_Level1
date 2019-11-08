@@ -1,0 +1,24 @@
+table{
+    border-collapse: collapse
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 36px;
+}
+.border-none{
+    border: none;
+}
+.white{
+    background-color: white;
+}
+
+.gray {
+    background-color: grey;
+}
+.hov:hover{
+    background-color: bisque;
+}
