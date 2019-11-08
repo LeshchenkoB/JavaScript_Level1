@@ -34,16 +34,16 @@ let renderer={
                             } else {
                                 color = "white"
                             }
-                        if (y==1) { // если восьмая горизонталь
+                        if (y == 1) { // если восьмая горизонталь
                             figure = eightFigure[x];
                         }
-                        if (y==2) { // если седьмая горизонталь
+                        if (y == 2) { // если седьмая горизонталь
                             figure = sevenFigure[x];
                         }
-                        if (y==7) { // если вторая горизонталь
+                        if (y == 7) { // если вторая горизонталь
                             figure = twoFigure[x];
                         }
-                        if (y==8) { // если первая горизонталь
+                        if (y == 8) { // если первая горизонталь
                             figure = oneFigure[x];
                         }
                         board += `<td data-x="${x}" data-y="${y}" class="${color} hov">${figure}</td>`;
@@ -55,5 +55,3 @@ let renderer={
         return `<table><tbody>${board}</tbody></table>`
     }
 }
-
-renderer.renderBoard();
