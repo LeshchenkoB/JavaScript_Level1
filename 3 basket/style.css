@@ -41,3 +41,7 @@ img{
 .mt-3, .my-3{
     margin-top: 0 !important;
 }
+
+.productRemovePointer{
+    cursor: pointer;
+}
