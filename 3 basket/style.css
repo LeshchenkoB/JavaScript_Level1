@@ -1,3 +1,6 @@
+h3{
+    margin-top: 15px;
+}
 img{
     margin: 0 auto;
     margin-top: 20px;
@@ -35,3 +38,6 @@ img{
     display: none;
 }
 
+.mt-3, .my-3{
+    margin-top: 0 !important;
+}

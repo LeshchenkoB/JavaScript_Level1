@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lesson_6</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div class="container">
@@ -25,8 +27,12 @@
                         <img src="img/1.jpg" alt="photo">
                         <button class="btn-decs">Показать описание</button>
                         <div class="price">
-                            Цена: <span>100 р.</span>
-                            <button class="btn-buy">В корзину</button>
+                            Цена: <span>100 </span><i class="fas fa-ruble-sign"></i>
+                            <button type="button"
+                                    class="btn btn-success mt-3 toBasketBtn"
+                                    data-id="1"
+                                    data-price="100"
+                                    data-name="Товар 1">В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -41,8 +47,12 @@
                         <img src="img/2.jpg" alt="photo">
                         <button class="btn-decs">Показать описание</button>
                         <div class="price">
-                            Цена: <span>200 р.</span>
-                            <button class="btn-buy">В корзину</button>
+                            Цена: <span>200 </span><i class="fas fa-ruble-sign"></i>
+                            <button type="button"
+                                    class="btn btn-success mt-3 toBasketBtn"
+                                    data-id="2"
+                                    data-price="200"
+                                    data-name="Товар 2">В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -57,8 +67,12 @@
                         <img src="img/3.png" alt="photo">
                         <button class="btn-decs">Показать описание</button>
                         <div class="price">
-                            Цена: <span>300 р.</span>
-                            <button class="btn-buy">В корзину</button>
+                            Цена: <span>300 </span><i class="fas fa-ruble-sign"></i>
+                            <button type="button"
+                                    class="btn btn-success mt-3 toBasketBtn"
+                                    data-id="3"
+                                    data-price="300"
+                                    data-name="Товар 3">В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -73,8 +87,12 @@
                         <img src="img/4.jpg" alt="photo">
                         <button class="btn-decs">Показать описание</button>
                         <div class="price">
-                            Цена: <span>400 р.</span>
-                            <button class="btn-buy">В корзину</button>
+                            Цена: <span>400 </span><i class="fas fa-ruble-sign"></i>
+                            <button type="button"
+                                    class="btn btn-success mt-3 toBasketBtn"
+                                    data-id="4"
+                                    data-price="400"
+                                    data-name="Товар 4">В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -89,8 +107,12 @@
                         <img src="img/5.jpg" alt="photo">
                         <button class="btn-decs">Показать описание</button>
                         <div class="price">
-                            Цена: <span>500 р.</span>
-                            <button class="btn-buy">В корзину</button>
+                            Цена: <span>500 </span><i class="fas fa-ruble-sign"></i>
+                            <button type="button"
+                                    class="btn btn-success mt-3 toBasketBtn"
+                                    data-id="5"
+                                    data-price="500"
+                                    data-name="Товар 5">В корзину</button>
                         </div>
                     </div>
                 </div>
@@ -105,14 +127,41 @@
                         <img src="img/6.jpg" alt="photo">
                         <button class="btn-decs">Показать описание</button>
                         <div class="price">
-                            Цена: <span>600 р.</span>
-                            <button class="btn-buy">В корзину</button>
+                            Цена: <span>600 </span><i class="fas fa-ruble-sign"></i>
+                            <button type="button"
+                                    class="btn btn-success mt-3 toBasketBtn"
+                                    data-id="6"
+                                    data-price="600"
+                                    data-name="Товар 6">В корзину</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-3">Корзина</div>
+        <div class="col-3">
+            <h3>Корзина</h3>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                <tr>
+                    <th colspan="2" scope="row">Итого:</th>
+                    <td colspan="3">
+                        <span class="total">0</span>
+                        <i class="fas fa-ruble-sign"></i>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 </div>
 
