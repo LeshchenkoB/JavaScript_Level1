@@ -58,6 +58,7 @@ class Game {
      * 2. проверяет проиграна/выиграна ли игра
      * 3. увеличивает размер змейки если она ест еду
      * 4. заново отрисовывает положение змейки и еды
+     * 5. выводит сообщение о счете игры
      */
     doTick() {
         this.snake.performStep();
@@ -74,8 +75,17 @@ class Game {
         this.board.clearBoard();
         this.food.setFood();
         this.board.renderSnake();
+        this.scoreOnline();
     }
 
+    /**
+     * Метод выводит сообщение о счете (количестве съеденной еды)
+     * @returns {string}
+     */
+    scoreOnline(){
+        let score = this.snake.body.length - 1;
+        this.setMessage(`Ваш текущий счет: ${score}`);
+    }
     /**
      * Метод проверяет выиграна ли игра, останавливает игру,
      * выводит сообщение о выигрыше.

@@ -247,6 +247,16 @@ class Game {
         this.board.clearBoard();
         this.food.setFood();
         this.board.renderSnake();
+        this.scoreOnline();
+    }
+
+    /**
+     * Метод выводит сообщение о счете (количестве съеденной еды)
+     * @returns {string}
+     */
+    scoreOnline(){
+        let score = this.snake.body.length - 1;
+        this.setMessage(`Ваш текущий счет: ${score}`);
     }
 
     /**
