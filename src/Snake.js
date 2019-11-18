@@ -77,6 +77,20 @@ class Snake {
     }
 
     /**
+     * Метод проверяет съела ли змея сама себя
+     * Выполняется после осуществления шага
+     * @returns {boolean} true если змейка съедает сама себя, иначе false.
+     */
+    isEatMyself(){
+        let currentHeadCoords = this.body[0];
+        for (let i = 1; i < this.body.length; i++){
+            if (currentHeadCoords.x == this.body[i].x && currentHeadCoords.y == this.body[i].y){
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
      * Метод дублирует в массиве объектов представляющих тело змейки
      * последнюю ячейку, т.е. в массиве в конце оказываются два
      * одинаковых объекта. Когда метод performStep в самом конце

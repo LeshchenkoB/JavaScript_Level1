@@ -283,9 +283,14 @@ class Game {
     isGameLost() {
         if (this.board.isNextStepToWall(this.snake.body[0])) {
             clearInterval(this.tickIdentifier);
-            this.setMessage('Вы проиграли');
+            this.setMessage('Вы проиграли. Вы врезались в стену!');
             return true;
         }
+		if (this.snake.isEatMyself()){          //проверяем, сходила ли змейка в саму себя
+            clearInterval(this.tickIdentifier);
+            this.setMessage('Вы проиграли, змейка не может есть саму себя!');
+            return true;
+        };
         return false;
     }
 
@@ -328,7 +333,7 @@ window.addEventListener('load', () => {
     const food = new Food();
     const game = new Game();
     
-    settings.init({ speed: 5, winLength: 5 });
+    settings.init({ speed: 5, winLength: 7 });
     board.init(settings, snake);
     food.init(settings, snake, board);
     game.init(settings, status, board, snake, menu, food);
@@ -467,6 +472,21 @@ class Snake {
         }
         this.body.unshift(newHeadCoords);
         this.body.pop();
+    }
+
+    /**
+     * Метод проверяет съела ли змея сама себя
+     * Выполняется после осуществления шага
+     * @returns {boolean} true если змейка съедает сама себя, иначе false.
+     */
+    isEatMyself(){
+        let currentHeadCoords = this.body[0];
+        for (let i = 1; i < this.body.length; i++){
+            if (currentHeadCoords.x == this.body[i].x && currentHeadCoords.y == this.body[i].y){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
