@@ -281,11 +281,6 @@ class Game {
      * true, иначе false.
      */
     isGameLost() {
-        if (this.board.isNextStepToWall(this.snake.body[0])) {
-            clearInterval(this.tickIdentifier);
-            this.setMessage('Вы проиграли. Вы врезались в стену!');
-            return true;
-        }
 		if (this.snake.isEatMyself()){          //проверяем, сходила ли змейка в саму себя
             clearInterval(this.tickIdentifier);
             this.setMessage('Вы проиграли, змейка не может есть саму себя!');
