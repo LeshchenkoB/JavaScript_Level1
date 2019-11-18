@@ -83,7 +83,7 @@ class Game {
      * @returns {string}
      */
     scoreOnline(){
-        let score = this.snake.body.length - 1;
+        let score = this.snake.body.length;
         this.setMessage(`Ваш текущий счет: ${score}`);
     }
     /**

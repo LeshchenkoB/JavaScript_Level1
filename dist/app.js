@@ -255,7 +255,7 @@ class Game {
      * @returns {string}
      */
     scoreOnline(){
-        let score = this.snake.body.length - 1;
+        let score = this.snake.body.length;
         this.setMessage(`Ваш текущий счет: ${score}`);
     }
 
@@ -334,6 +334,7 @@ window.addEventListener('load', () => {
     const game = new Game();
     
     settings.init({ speed: 5, winLength: 7 });
+    snake.init(settings);
     board.init(settings, snake);
     food.init(settings, snake, board);
     game.init(settings, status, board, snake, menu, food);
@@ -409,6 +410,13 @@ class Snake {
     }
 
     /**
+     * @param{Settings} settings настройки игры
+     */
+    init(settings){
+        this.settings = settings;
+    }
+
+    /**
      * Меняем направление движения.
      * @param {string} direction направление может быть down, up, left, right.
      * @throws {Error} при передаче не корректного направления выбрасывается ошибка.
@@ -459,15 +467,27 @@ class Snake {
         switch (this.direction) {
             case "down":
                 newHeadCoords.y++;
+                if (newHeadCoords.y > this.settings.rowsCount){ // если врезаемся в стену снизу, появляемся сверху
+                    newHeadCoords.y = 1;
+                }
                 break;
             case "up":
                 newHeadCoords.y--;
+                if (newHeadCoords.y == 0) { // если врезаемся в стену сверху, появляемся снизу
+                    newHeadCoords.y = this.settings.rowsCount;
+                }
                 break;
             case "left":
                 newHeadCoords.x--;
+                if (newHeadCoords.x == 0) { // если врезаемся в стену слева, появляемся справа
+                    newHeadCoords.x = this.settings.colsCount;
+                }
                 break;
             case "right":
                 newHeadCoords.x++;
+                if (newHeadCoords.x > this.settings.colsCount){ // если врезаемся в стену справа, появляемся слева
+                    newHeadCoords.x = 1;
+                }
                 break;
         }
         this.body.unshift(newHeadCoords);

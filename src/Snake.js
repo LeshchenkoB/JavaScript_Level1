@@ -11,6 +11,13 @@ class Snake {
     }
 
     /**
+     * @param{Settings} settings настройки игры
+     */
+    init(settings){
+        this.settings = settings;
+    }
+
+    /**
      * Меняем направление движения.
      * @param {string} newDirection направление может быть down, up, left, right.
      * @throws {Error} при передаче не корректного направления выбрасывается ошибка.
@@ -61,15 +68,27 @@ class Snake {
         switch (this.direction) {
             case "down":
                 newHeadCoords.y++;
+                if (newHeadCoords.y > this.settings.rowsCount){ // если врезаемся в стену снизу, появляемся сверху
+                    newHeadCoords.y = 1;
+                }
                 break;
             case "up":
                 newHeadCoords.y--;
+                if (newHeadCoords.y == 0) { // если врезаемся в стену сверху, появляемся снизу
+                    newHeadCoords.y = this.settings.rowsCount;
+                }
                 break;
             case "left":
                 newHeadCoords.x--;
+                if (newHeadCoords.x == 0) { // если врезаемся в стену слева, появляемся справа
+                    newHeadCoords.x = this.settings.colsCount;
+                }
                 break;
             case "right":
                 newHeadCoords.x++;
+                if (newHeadCoords.x > this.settings.colsCount){ // если врезаемся в стену справа, появляемся слева
+                    newHeadCoords.x = 1;
+                }
                 break;
         }
         this.body.unshift(newHeadCoords);
