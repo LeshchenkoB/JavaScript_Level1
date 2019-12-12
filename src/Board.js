@@ -37,24 +37,3 @@ class Board{
         this.gameTableElement.addEventListener('click', event => this.cellClickHandler(event));
     }
 }
-window.addEventListener('load', ()=>{
-    const settings = new Settings;
-    const board = new Board;
-
-    board.init();
-});
-
-
-
-class Settings{
-    constructor() {
-        status: 'playing';
-        mapValues: [
-            ['', '', ''],
-            ['', '', ''],
-            ['', '', ''],
-        ];
-        phase: 'X';
-    }
-};
-//# sourceMappingURL=maps/app.js.map
