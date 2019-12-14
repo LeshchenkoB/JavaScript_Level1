@@ -32,6 +32,13 @@ class Board{
 }
 'use strict';
 class Game {
+    /**
+     * Метод получает другие игровые объекты, которые нужны ему
+     * для работы.
+     * @param {Вoard} board объект игрового поля.
+     * @param {Settings} settings объект настроек.
+     * @param {Status} status объект статусов игры.
+     */
     init(board,settings,status){
         this.board = board;
         this.settings = settings;
@@ -172,7 +179,6 @@ window.addEventListener('load', ()=>{
     const status = new Status;
 
     board.init();
-    // status.setPlaying();
     game.init(board,settings,status);
 });
 

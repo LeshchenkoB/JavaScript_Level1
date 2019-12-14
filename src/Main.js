@@ -6,7 +6,6 @@ window.addEventListener('load', ()=>{
     const status = new Status;
 
     board.init();
-    // status.setPlaying();
     game.init(board,settings,status);
 });
 
