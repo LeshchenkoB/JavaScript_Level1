@@ -143,6 +143,12 @@ class Game {
         let value = this.settings.mapValues[a.y][a.x] + this.settings.mapValues[b.y][b.x] + this.settings.mapValues[c.y][c.x];
         return value === 'XXX' || value === '000';
     }
+    /**
+     * Меняет фигуру (крестик или нолик).
+     */
+    togglePhase() {
+        this.settings.phase = this.settings.phase === 'X' ? '0' : 'X';
+    }
 }
 'use strict';
 window.addEventListener('load', ()=>{
