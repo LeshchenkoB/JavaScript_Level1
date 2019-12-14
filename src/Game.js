@@ -1,36 +1,4 @@
 'use strict';
-class Board{
-    constructor() {
-        this.gameTableElement=document.getElementById('game');
-    }
-
-    /**
-     * Инициализация игры.
-     */
-    init() {
-        // Выводим все ячейки.
-        this.renderMap();
-
-    };
-
-    /**
-     * Вывод ячеек в html.
-     */
-    renderMap() {
-        for (let row = 0; row < 3; row++) {
-            const tr = document.createElement('tr');
-            this.gameTableElement.appendChild(tr);
-            for (let col = 0; col < 3; col++) {
-                let td = document.createElement('td');
-                td.dataset.row = row.toString();
-                td.dataset.col = col.toString();
-                tr.appendChild(td);
-            }
-        }
-    };
-
-}
-'use strict';
 class Game {
     init(board,settings,status){
         this.board = board;
@@ -117,45 +85,3 @@ class Game {
     }
 
 }
-'use strict';
-window.addEventListener('load', ()=>{
-    const settings = new Settings;
-    const board = new Board;
-    const game = new Game;
-    const status = new Status;
-
-    board.init();
-    // status.setPlaying();
-    game.init(board,settings,status);
-});
-
-
-'use strict';
-class Settings{
-    constructor() {
-        this.mapValues = [
-            ['', '', ''],
-            ['', '', ''],
-            ['', '', ''],
-        ];
-        this.phase = 'X';
-    }
-};
-'use strict';
-class Status {
-    constructor() {
-        this.setPlaying();
-    }
-    /** Это значит что мы играем. */
-    setPlaying() {
-        this.status = 'playing';
-    }
-    /**
-     * @returns {boolean} если мы сейчас играем, тогда true, иначе false.
-     */
-    isStatusPlaying() {
-        return this.status === 'playing';
-    }
-
-}
-//# sourceMappingURL=maps/app.js.map

@@ -1,12 +1,11 @@
-
+'use strict';
 class Settings{
     constructor() {
-        status: 'playing';
-        mapValues: [
+        this.mapValues = [
             ['', '', ''],
             ['', '', ''],
             ['', '', ''],
         ];
-        phase: 'X';
+        this.phase = 'X';
     }
 };

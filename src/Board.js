@@ -1,4 +1,4 @@
-
+'use strict';
 class Board{
     constructor() {
         this.gameTableElement=document.getElementById('game');
@@ -10,8 +10,7 @@ class Board{
     init() {
         // Выводим все ячейки.
         this.renderMap();
-        // Инициализируем обработчики событий.
-        this.initEventHandlers();
+
     };
 
     /**
@@ -29,11 +28,5 @@ class Board{
             }
         }
     };
-    /**
-     * Инициализация обработчиков событий.
-     */
-    initEventHandlers() {
-        // Ставим обработчик, при клике на таблицу вызовется функция this.cellClickHandler.
-        this.gameTableElement.addEventListener('click', event => this.cellClickHandler(event));
-    }
+
 }
