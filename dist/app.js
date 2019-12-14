@@ -149,6 +149,20 @@ class Game {
     togglePhase() {
         this.settings.phase = this.settings.phase === 'X' ? '0' : 'X';
     }
+    /**
+     * Ставит статус игры в "остановлена".
+     */
+    setStatusStopped() {
+        this.status.status = 'stopped';
+    }
+
+    /**
+     * Сообщает о победе.
+     */
+    sayWonPhrase() {
+        let figure = this.settings.phase === 'X' ? 'Крестики' : 'Нолики';
+        alert(`${figure} выиграли!`);
+    }
 }
 'use strict';
 window.addEventListener('load', ()=>{
